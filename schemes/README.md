@@ -1,7 +1,7 @@
 Electromechanical diagrams
 ====
 
-This directory contains our schematic diagram in form PNG of the electronical components illustrating all the elements (Ultrasonicsensors, Servo motor for the axis, DC motors & Motor shield, Wheels, Microcontroller Arduino Mega, Piezzo buzzer) used in the vehicle and how they connect to each other on the mini breadboard. Our robot is powered by two 9V batteries, one for the axis and one for the wheels. We used cirkitdesigner to draw the schematic.
+This directory contains our schematic diagram in form PNG of the electronical components illustrating all the elements (Raspberry, Servo motor for the axis, Stepper motor & Motor driver, Wheels, Arduino) used in the vehicle and how they connect to each other on the mini breadboard. Our robot is powered by four 3.7V batteries. We used canva to draw the schematic.
 
 
-Este directorio contiene nuestro diagrama esquemático en formato PNG de los componentes electrónicos, que ilustra todos los elementos utilizados en el vehículo (sensores ultrasónicos, servo motor para el eje, motores DC y shield de motor, ruedas, microcontrolador Arduino Mega y zumbador piezoeléctrico), así como la forma en que se conectan entre sí en la mini breadboard. Nuestro robot está alimentado por dos baterías de 9V: una para el eje y otra para las ruedas. El diagrama fue dibujado utilizando Cirkit Designer.
+Este directorio contiene nuestro esquema de los componentes electrónicos en formato PNG, el cual ilustra todos los elementos utilizados en el vehículo (Raspberry, servomotor para el eje, motor paso a paso y controlador de motor, ruedas, Arduino) y cómo se conectan entre sí en la miniplaca de pruebas (*breadboard*). Nuestro robot se alimenta mediante cuatro baterías de 3,7 V. Utilizamos Canva para dibujar el esquema.
