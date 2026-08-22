@@ -15,6 +15,5 @@ Our team Kuntur created our auto driving car "Luna" to participate in the WRO Na
 **Please read the README.md files in each folders to understand our documentation better**
 
 Nuestro equipo, Kuntur, creó el vehículo autónomo "Luna" para participar en el campeonato nacional de la WRO de 2026. Se trata de un automóvil de conducción autónoma diseñado para detectar obstáculos en su entorno y sortearlos. Para ello, instalamos una cámara estándar Raspberry Pi (módulo 2) en la parte superior del vehículo. Utilizamos un motor paso a paso para crear un sistema de diferencial que impulsa las ruedas traseras, y un servomotor para accionar el eje de las ruedas delanteras. Asimismo, programamos la cámara para detectar líneas, diversos objetos y paredes.
-wha
 
 **Por favor, lee los archivos README.md en cada carpeta para comprender mejor nuestra documentación.**
