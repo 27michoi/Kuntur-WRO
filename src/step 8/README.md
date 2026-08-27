@@ -1,4 +1,3 @@
-**Step 8**
 Measurement
 Value
 Wheelbase L
