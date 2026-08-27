@@ -1,10 +1,14 @@
-**Overview**
+## Overview
 
 This document guides you through setting up, testing, and calibrating a robot's 1-meter straight-line movement using PlatformIO, C++ code, and serial commands.
 
----
+###### Resumen
 
-**Step-by-Step Instructions**
+######
+
+___
+
+## Step-by-Step Instructions
 
 1. **Environment Setup**
 * Create a new project directory (`step6_straight_line_test`) with `src` and `lib` subdirectories on the Raspberry Pi via SSH.
