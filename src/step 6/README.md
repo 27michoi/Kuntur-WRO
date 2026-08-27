@@ -4,7 +4,7 @@ This document guides you through setting up, testing, and calibrating a robot's 
 
 ###### Resumen
 
-######
+###### texto
 
 ___
 
@@ -64,3 +64,8 @@ Update `TEST_STEPS` in `main.cpp` and re-upload.
 * The 3 measured distances and lateral deviations.
 * Confirmation that 6400 steps moved the robot forward.
 * Photos: Top-down view at `A99`, side view of wheel against a ruler, and a close-up of the gears/microstep jumpers.
+
+
+###### Instrucciones paso a paso
+
+###### texto
