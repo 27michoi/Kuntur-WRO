@@ -49,13 +49,31 @@ ____
 
 ____
 
-### Drive System
+## Drive System
+###### Sistema de manejo
 
 [`StepMotorBracker.stl`](./StepMotorBracket.stl)
-missing base motor
+[`BaseMotorBig.stl`](./BaseMotorBig.stl)
 [`CouplingV3.stl`](./CouplingV3.stl)
 
-___ 
+____
+
+## Camera System
+###### Sistema de cámara
+
+[`CamHolderV4.stl`](./CamHolderV4.stl)
+
+____
+
+## External and Supporting Components
+###### Componentes externos y auxiliares
+
+[`FrontWingV2.stl`](./FrontWingV2.stl)
+[`ButtonHolder.stl`](./ButtonHolder.stl)
+
+
+
+
 
 
 
