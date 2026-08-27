@@ -1,4 +1,6 @@
-## Introduction:
+
+Introduction
+----
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
