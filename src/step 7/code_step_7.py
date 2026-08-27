@@ -1,74 +1,74 @@
-Measurement
-Value
-Wheelbase L
-167 mm
-Rear track width T
-139 mm
-Wheel diameter
-56 mm
-Wheel width
-27 mm
-Current servo centre
-82
-Motor speed
-600
+#Measurement
+#Value
+#Wheelbase L
+#167 mm
+#Rear track width T
+#139 mm
+#Wheel diameter
+#56 mm
+#Wheel width
+#27 mm
+#Current servo centre
+#82
+#Motor speed
+#600
 
-LOWER VALUES → RIGHT
-HIGHER VALUES → LEFT
+#LOWER VALUES → RIGHT
+#HIGHER VALUES → LEFT
 
-Angle
-Start to 2 (mm)
-2 to 3 (mm)
-Start to 3 (mm)
-75 (Right)
-1067
-1067
-1945
-75 (Right)
-1070
-1049
-1930
-75 (Right)
-1030
-1060
-1890
-66 (Right)
-932
-932
-1050
-90 (Left)
-1048
-1065
-1962
-90 (Left)
-1054
-1040
-1961
-90 (Left)
-1067
-1052
-1971
-105 (Left)
-830
-820
-547
+#Angle
+#Start to 2 (mm)
+#2 to 3 (mm)
+#Start to 3 (mm)
+#75 (Right)
+#1067
+#1067
+#1945
+#75 (Right)
+#1070
+#1049
+#1930
+#75 (Right)
+#1030
+#1060
+#1890
+#66 (Right)
+#932
+#932
+#1050
+#90 (Left)
+#1048
+#1065
+#1962
+#90 (Left)
+#1054
+#1040
+#1961
+#90 (Left)
+#1067
+#1052
+#1971
+#105 (Left)
+#830
+#820
+#547
 
-Target steps: 1800
-Command
-Direction
-Radius
-66
-Right
-564.0 mm
-105
-Left
-437.3 mm
+#Target steps: 1800
+#Command
+#Direction
+#Radius
+#66
+#Right
+#564.0 mm
+#105
+#Left
+#437.3 mm
 
 
-Step 7: Constant-radius test
-1. Prepare the PlatformIO project
-Run:
-cd ~/Projects/MyRobot
+#Step 7: Constant-radius test
+#1. Prepare the PlatformIO project
+#Run:
+#cd ~/Projects/MyRobot
 
 mkdir -p step7_constant_radius_test/src
 mkdir -p step7_constant_radius_test/results
@@ -575,75 +575,75 @@ If pio is not found, use:
 ~/.platformio/penv/bin/pio run
 ~/.platformio/penv/bin/pio run --target upload
 ~/.platformio/penv/bin/pio device monitor
-Exit the monitor with Ctrl+C.
-3. Check steering safely
-First lift the robot so the driven wheels cannot propel it. Keep fingers away from the steering linkage.
-The motor driver stays disabled while the program says IDLE.
-Enter these commands one at a time:
-CENTER
-A80
-A78
-A76 (LOWER--> RIGHT)
-CENTER
-A84
-A86
-A88
-CENTER
-For every position, check:
-The linkage does not touch a mechanical stop.
-The servo does not buzz or strain.
-The tires do not rub the chassis.
-The wheels return to straight at CENTER.
-If it strains, immediately enter:
-CENTER
-or switch off robot power.
-Determine which command turns the robot left when travelling forward:
-LOW
-and then:
-HIGH
-Record this mapping:
-76 produces: left or right
-88 produces: left or right
-We should not assume that a lower number means left.
-4. Perform two short safety runs
-Use a clear floor with at least several metres of space. Keep the USB cable loose so it cannot pull on the robot.
-Start with only about 246 mm of travel:
-SHORT
-LOW
-STATUS
-GO
-After it stops:
-CENTER
-Return the robot to the starting point and test the other side:
-SHORT
-HIGH
-STATUS
-GO
-Check that both runs:
-Curve smoothly.
-Stop automatically.
-Do not cause steering binding.
-Do not cause excessive wheel slipping.
-Travel forward rather than backward.
-STOP is a controlled deceleration, not an instant emergency stop. Keep the robot’s power switch accessible.
-5. Select the measurement distance
-If both short runs are safe, use:
-MEDIUM
-This travels approximately 492 mm.
-If the curve is too short to measure accurately and you have enough space, use:
-FULL
-This travels approximately 984 mm.
-Use the same step count for every left and right measurement.
-Three-position method
-Mark the midpoint of the rear axle—not the front wheels or the camera.
-For each test:
-Place the robot down and mark its rear-axle midpoint as P1.
-Select the steering and distance:
-MEDIUM
-LOW
-Run:
-GO
-When RUN COMPLETE appears, mark the new rear-axle midpoint as P2.
+#Exit the monitor with Ctrl+C.
+#3. Check steering safely
+#First lift the robot so the driven wheels cannot propel it. Keep fingers away from the steering linkage.
+#The motor driver stays disabled while the program says IDLE.
+#Enter these commands one at a time:
+#CENTER
+#A80
+#A78
+#A76 (LOWER--> RIGHT)
+#CENTER
+#A84
+#A86
+#A88
+#CENTER
+#For every position, check:
+#The linkage does not touch a mechanical stop.
+#The servo does not buzz or strain.
+#The tires do not rub the chassis.
+#The wheels return to straight at CENTER.
+#If it strains, immediately enter:
+#CENTER
+#or switch off robot power.
+#Determine which command turns the robot left when travelling forward:
+#LOW
+#and then:
+#HIGH
+#Record this mapping:
+#76 produces: left or right
+#88 produces: left or right
+#We should not assume that a lower number means left.
+#4. Perform two short safety runs
+#Use a clear floor with at least several metres of space. Keep the USB cable loose so it cannot pull on the robot.
+#Start with only about 246 mm of travel:
+#SHORT
+#LOW
+#STATUS
+#GO
+#After it stops:
+#CENTER
+#Return the robot to the starting point and test the other side:
+#SHORT
+#HIGH
+#STATUS
+#GO
+#Check that both runs:
+#Curve smoothly.
+#Stop automatically.
+#Do not cause steering binding.
+#Do not cause excessive wheel slipping.
+#Travel forward rather than backward.
+#STOP is a controlled deceleration, not an instant emergency stop. Keep the robot’s power switch accessible.
+#5. Select the measurement distance
+#If both short runs are safe, use:
+#MEDIUM
+#This travels approximately 492 mm.
+#If the curve is too short to measure accurately and you have enough space, use:
+#FULL
+#This travels approximately 984 mm.
+#Use the same step count for every left and right measurement.
+#Three-position method
+#Mark the midpoint of the rear axle—not the front wheels or the camera.
+#For each test:
+#Place the robot down and mark its rear-axle midpoint as P1.
+#Select the steering and distance:
+#MEDIUM
+#LOW
+#Run:
+#GO
+#When RUN COMPLETE appears, mark the new rear-axle midpoint as P2.
 Do not move, rotate, or lift the robot.
 Run the identical segment again:
 GO
