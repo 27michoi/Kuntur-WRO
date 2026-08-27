@@ -7,10 +7,10 @@ Five-second delay before moving
 Automatic motor-driver disable after stopping
 Serial commands for GO, STOP, and steering adjustment
 The initial distance will use 6400 motor steps. This is an estimate based on the repository’s 55.6 mm wheels, quarter-step configuration, and 10:14 gearing. The actual floor measurement will give us the precise calibration.
-Step 6 — Straight-line distance test
-1. Prepare a separate PlatformIO project
-In the Raspberry Pi terminal through Remote SSH, run:
-export PATH="$HOME/.platformio/penv/bin:$PATH"
+#Step 6 — Straight-line distance test
+#1. Prepare a separate PlatformIO project
+#In the Raspberry Pi terminal through Remote SSH, run:
+#export PATH="$HOME/.platformio/penv/bin:$PATH"
 
 mkdir -p /home/admin/MyRobot/step6_straight_line_test/src
 mkdir -p /home/admin/MyRobot/step6_straight_line_test/lib
@@ -26,50 +26,50 @@ In VS Code, select:
 File → Open Folder
 Open:
 /home/admin/MyRobot/step6_straight_line_test
-2. Create platformio.ini
-Create this file:
-/home/admin/MyRobot/step6_straight_line_test/platformio.ini
-Paste:
-[env:uno]
-platform = atmelavr
-board = uno
-framework = arduino
-monitor_speed = 115200
-3. Create src/main.cpp
-Create:
-/home/admin/MyRobot/step6_straight_line_test/src/main.cpp
-Paste this complete code:
+#2. Create platformio.ini
+#Create this file:
+#/home/admin/MyRobot/step6_straight_line_test/platformio.ini
+#Paste:
+#[env:uno]
+#platform = atmelavr
+#board = uno
+#framework = arduino
+#monitor_speed = 115200
+#3. Create src/main.cpp
+#reate:
+#/home/admin/MyRobot/step6_straight_line_test/src/main.cpp
+#Paste this complete code:
 #include <Arduino.h>
 #include <FlexyStepper.h>
 #include <Servo.h>
 
-// Existing robot wiring
-constexpr uint8_t ENABLE_PIN = 2;
-constexpr uint8_t STEP_PIN = 9;
-constexpr uint8_t DIR_PIN = 10;
-constexpr uint8_t SERVO_PIN = 11;
+#// Existing robot wiring
+#constexpr uint8_t ENABLE_PIN = 2;
+#constexpr uint8_t STEP_PIN = 9;
+#constexpr uint8_t DIR_PIN = 10;
+#constexpr uint8_t SERVO_PIN = 11;
 
-// Results from Step 4
-constexpr int SERVO_MIN = 74;
-constexpr int SERVO_CENTER = 99;
-constexpr int SERVO_MAX = 124;
+#// Results from Step 4
+#constexpr int SERVO_MIN = 74;
+#constexpr int SERVO_CENTER = 99;
+#constexpr int SERVO_MAX = 124;
 
-// Results from Step 5
-constexpr float TEST_SPEED = 600.0F;
-constexpr float ACCELERATION = 2000.0F;
+#// Results from Step 5
+#constexpr float TEST_SPEED = 600.0F;
+#constexpr float ACCELERATION = 2000.0F;
 
-// Initial estimate for approximately 1000 mm
-constexpr long TEST_STEPS = 6400L;
+#// Initial estimate for approximately 1000 mm
+#constexpr long TEST_STEPS = 6400L;
 
-// Repository direction: negative step position is forward.
-// Change this to +1 only if the robot moves backward.
-constexpr int FORWARD_SIGN = -1;
+#// Repository direction: negative step position is forward.
+#// Change this to +1 only if the robot moves backward.
+#constexpr int FORWARD_SIGN = -1;
 
-// Time to move away after entering GO
-constexpr unsigned long START_DELAY_MS = 5000UL;
+#// Time to move away after entering GO
+#constexpr unsigned long START_DELAY_MS = 5000UL;
 
-Servo steeringServo;
-FlexyStepper stepper;
+#Servo steeringServo;
+#FlexyStepper stepper;
 
 enum RunState {
     IDLE,
@@ -320,71 +320,71 @@ void loop()
         }
     }
 }
-4. Compile the program
-Disconnect the motor battery before compiling and uploading.
-In the project terminal:
-cd /home/admin/MyRobot/step6_straight_line_test
-pio run
-Expected ending:
-[SUCCESS]
-If pio is not found:
-/home/admin/.platformio/penv/bin/pio run
-5. Find the Arduino port
-Run:
-pio device list
-export PATH="$HOME/.platformio/penv/bin:$PATH"
-pio run
-You should find:
-/dev/ttyACM0
-If it displays /dev/ttyACM1, use that instead in every following command.
-6. Upload
-Keep the motor battery disconnected while uploading:
-pio run --target upload --upload-port /dev/ttyACM0
-Expected:
-[SUCCESS]
-7. First test with the wheels raised
-Before putting the robot on the floor, verify the new program.
-Raise the wheels.
-Connect the motor battery.
-Keep hands, wires, and loose objects away from the drivetrain.
-Open the serial monitor:
-pio device monitor --port /dev/ttyACM0 --baud 115200
-Enter:
-STATUS
-Then:
-A99
-Then:
-GO
-The program waits five seconds, accelerates, runs, decelerates, stops, and prints:
-DONE
-Driver disabled.
-Expected duration is approximately 11 seconds.
-If the wheels rotate backward
-Exit the monitor with:
-Ctrl + ]
-Change:
-constexpr int FORWARD_SIGN = -1;
-to:
-constexpr int FORWARD_SIGN = 1;
-Upload again. Do not reverse the motor wires just for this.
-8. Prepare the floor test
-Use a flat, hard floor—not carpet.
-You need:
-Measuring tape
-Painter’s tape
-Straight reference line
-At least 1.5–2 metres of clear space
-Paper for recording results
-Make these marks:
-A straight centerline at least 1.2 m long.
-A perpendicular starting line.
-A perpendicular target line exactly 1000 mm from the starting line.
-Use the same chassis reference point for every measurement. The easiest reference is the center of the front axle projected onto the floor.
-Position the robot so that:
-Front wheels are straight.
-Chassis center is over the reference line.
-Front-axle reference is exactly over the starting line.
-No cable is pulling sideways.
+#4. Compile the program
+#Disconnect the motor battery before compiling and uploading.
+#In the project terminal:
+#cd /home/admin/MyRobot/step6_straight_line_test
+#pio run
+#Expected ending:
+#[SUCCESS]
+#If pio is not found:
+#/home/admin/.platformio/penv/bin/pio run
+#5. Find the Arduino port
+#Run:
+#pio device list
+#export PATH="$HOME/.platformio/penv/bin:$PATH"
+#pio run
+#You should find:
+#/dev/ttyACM0
+#If it displays /dev/ttyACM1, use that instead in every following command.
+#6. Upload
+#Keep the motor battery disconnected while uploading:
+#pio run --target upload --upload-port /dev/ttyACM0
+#Expected:
+#[SUCCESS]
+#7. First test with the wheels raised
+#Before putting the robot on the floor, verify the new program.
+#Raise the wheels.
+#Connect the motor battery.
+#Keep hands, wires, and loose objects away from the drivetrain.
+#Open the serial monitor:
+#pio device monitor --port /dev/ttyACM0 --baud 115200
+#Enter:
+#STATUS
+#Then:
+#A99
+#Then:
+#GO
+#The program waits five seconds, accelerates, runs, decelerates, stops, and prints:
+#DONE
+#Driver disabled.
+#Expected duration is approximately 11 seconds.
+#If the wheels rotate backward
+#Exit the monitor with:
+#Ctrl + ]
+#Change:
+#constexpr int FORWARD_SIGN = -1;
+#to:
+#constexpr int FORWARD_SIGN = 1;
+#Upload again. Do not reverse the motor wires just for this.
+#8. Prepare the floor test
+#Use a flat, hard floor—not carpet.
+#You need:
+#Measuring tape
+#Painter’s tape
+#Straight reference line
+#At least 1.5–2 metres of clear space
+#Paper for recording results
+#Make these marks:
+#A straight centerline at least 1.2 m long.
+#A perpendicular starting line.
+#A perpendicular target line exactly 1000 mm from the starting line.
+#Use the same chassis reference point for every measurement. The easiest reference is the center of the front axle projected onto the floor.
+#Position the robot so that:
+#Front wheels are straight.
+#Chassis center is over the reference line.
+#Front-axle reference is exactly over the starting line.
+#No cable is pulling sideways.
 At least 50 cm of additional stopping space remains after the target.
 The USB cable should form a loose loop behind the robot. A tight cable can steer the robot and ruin the measurement.
 9. Run the 1 m test
