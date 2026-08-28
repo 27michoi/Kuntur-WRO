@@ -3,9 +3,9 @@
 # IMPORTANT:
 # This document contains instructions and notes for a robot project.
 # The actual robot program for this step is written in C++, not Python.
-#
+
 # Check the C++ code attached separately in the folder.
-#
+
 # The C++ file should be saved as:
 # step7_constant_radius_test/src/main.cpp
 
@@ -45,21 +45,16 @@
 # 1. PREPARE THE PLATFORMIO PROJECT
 
 # Run the following commands in Terminal:
-#
-# cd ~/Projects/MyRobot
-#
-# mkdir -p step7_constant_radius_test/src
-# mkdir -p step7_constant_radius_test/results
-#
-# cp step6_straight_line_test/platformio.ini \
-#   step7_constant_radius_test/platformio.ini
-#
-# cp -a step6_straight_line_test/lib \
-#   step7_constant_radius_test/
+cd ~/Projects/MyRobot
+mkdir -p step7_constant_radius_test/src
+mkdir -p step7_constant_radius_test/results
+cp step6_straight_line_test/platformio.ini \
+tep7_constant_radius_test/platformio.ini
+cp -a step6_straight_line_test/lib \
+step7_constant_radius_test/
 
 # Open the new C++ program:
-#
-# nano step7_constant_radius_test/src/main.cpp
+nano step7_constant_radius_test/src/main.cpp
 
 # Then paste the C++ code attached separately in the folder.
 
@@ -73,22 +68,18 @@
 # 2. COMPILE AND UPLOAD
 
 # Run in Terminal:
-#
-# cd ~/Projects/MyRobot/step7_constant_radius_test
-#
-# pio run
+cd ~/Projects/MyRobot/step7_constant_radius_test
+pio run
 
 # If compilation succeeds:
-#
-# pio device list
-# pio run --target upload
-# pio device monitor
+pio device list
+pio run --target upload
+pio device monitor
 
 # If pio is not found, use:
-#
-# ~/.platformio/penv/bin/pio run
-# ~/.platformio/penv/bin/pio run --target upload
-# ~/.platformio/penv/bin/pio device monitor
+~/.platformio/penv/bin/pio run
+~/.platformio/penv/bin/pio run --target upload
+~/.platformio/penv/bin/pio device monitor
 
 # Exit the monitor with Ctrl+C.
 
@@ -100,16 +91,15 @@
 # The motor driver stays disabled while the program says IDLE.
 
 # Enter these commands one at a time in the serial monitor:
-#
-# CENTER
-# A80
-# A78
-# A76
-# CENTER
-# A84
-# A86
-# A88
-# CENTER
+CENTER
+A80
+A78
+A76
+CENTER
+A84
+A86
+A88
+CENTER
 
 # For every position, check:
 # - The linkage does not touch a mechanical stop.
@@ -118,18 +108,14 @@
 # - The wheels return to straight at CENTER.
 
 # If it strains, immediately enter:
-#
-# CENTER
+CENTER
 
 # Or switch off robot power.
 
 # Determine which command turns the robot left when travelling forward:
-#
-# LOW
-#
+LOW
 # Then:
-#
-# HIGH
+HIGH
 
 # Record this mapping:
 #
@@ -146,22 +132,19 @@
 # Start with approximately 246 mm of travel.
 
 # Enter:
-#
-# SHORT
-# LOW
-# STATUS
-# GO
+SHORT
+LOW
+STATUS
+GO
 
 # After it stops:
-#
-# CENTER
+CENTER
 
 # Return the robot to the starting point and test the other side:
-#
-# SHORT
-# HIGH
-# STATUS
-# GO
+SHORT
+HIGH
+STATUS
+GO
 
 # Check that both runs:
 # - Curve smoothly.
@@ -177,15 +160,13 @@
 # 5. SELECT THE MEASUREMENT DISTANCE
 
 # If both short runs are safe, use:
-#
-# MEDIUM
+MEDIUM
 
 # This travels approximately 492 mm.
 
 # If the curve is too short to measure accurately and you have enough space,
 # use:
-#
-# FULL
+FULL
 
 # This travels approximately 984 mm.
 
@@ -201,26 +182,22 @@
 # 1. Place the robot down and mark its rear-axle midpoint as P1.
 
 # 2. Select the steering and distance:
-#
-# MEDIUM
-# LOW
+MEDIUM
+LOW
 
 # 3. Run:
-#
-# GO
+GO
 
 # 4. When RUN COMPLETE appears, mark the new rear-axle midpoint as P2.
 
 # 5. Do not move, rotate, or lift the robot.
 
 # 6. Run the identical segment again:
-#
-# GO
+GO
 
 # 7. Mark the final rear-axle midpoint as P3.
 
 # Now measure only these three straight-line distances:
-#
 # d12: P1 to P2
 # d23: P2 to P3
 # d13: P1 to P3
@@ -262,17 +239,11 @@
 
 # UPDATED DISTANCE ESTIMATE
 
-# Across the six final trials, 1800 steps corresponded to approximately
-# 1085 mm of path length.
-
+# Across the six final trials, 1800 steps corresponded to approximately 1085 mm of path length.
 # Steps per metre ≈ 1659.
-
 # Use 1660 as the new provisional value.
 
 # C++ code:
 # constexpr long STEPS_PER_METER = 1660L;
-#
-# Check the C++ code attached separately in the folder.
 
-# This should still be verified later with one direct straight-line
-# measurement because it was calculated from curved paths.
+# This should still be verified later with one direct straight-line measurement because it was calculated from curved paths.
