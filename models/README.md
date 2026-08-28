@@ -1,56 +1,49 @@
 # 3D Models
 ____
 
-## Overview
+## Resumen
 
-This directory contains the STL files for the 3D-printed components of our WRO 2026 robot. The models include the items for the structural chassis, steering mechanism, motor mounts, camera support, and other mechanical components used in the vehicle.
-
-###### Resumen
-
-###### Este directorio contiene los archivos STL de los componentes impresos en 3D de nuestro robot para la WRO 2026. Los modelos incluyen las piezas del chasis estructural, del mecanismo de dirección, de los soportes de los motores, del soporte de la cámara y otros componentes mecánicos utilizados en el vehículo.
+Este directorio contiene los archivos STL de los componentes impresos en 3D de nuestro robot para la WRO 2026. Los modelos incluyen las piezas del chasis estructural, del mecanismo de dirección, de los soportes de los motores, del soporte de la cámara y otros componentes mecánicos utilizados en el vehículo.
 
 ____
 
-## Chassis Structure
-###### Estructura del chasis
+## Estructura del chasis
 
-### Base Plates
+### Placas de base
 
 [`BasePlaqueV4.stl`](./BasePlaqueV4.stl)
 [`BasePlaqueV4-modifiedV1.stl`](./BasePlaqueV4-modifiedV1.stl) 
 
 
-### Middle Plates
+### Placas del medio
 
 [`MiddlePlaqueV4.stl`](./MiddlePlaqueV4.stl)
 [`MiddlePlaqueV4-modified_lu.stl`](./MiddlePlaqueV4-modified_lu.stl)
 
 
-### Top Plaque
+### Placas superiores
 
 [`TopPlaqueV4.stl`](./TopPlaqueV4.stl)
 
 ____
 
-## Steering System
-###### Sistema de conducción
+## Sistema de conducción
 
-### Direction Components
+### Componentes de dirección
 
 [`DirectionRods3.stl`](./DirectionRods3.stl)
 [`DirectionRodsShort3.stl`](./DirectionRodsShort3.stl)
 [`DirectionTabsLH.stl`](./DirectionTabsLH.stl)
 [`DirectionTabsRH.stl`](./DirectionTabsRH.stl)
 
-### Servo Components
+### Componentes de servo
 
 [`ServoHolderV2.stl`](./ServoHolderV2.stl)
 [`ServoCover.stl`](./ServoCover.stl)
 
 ____
 
-## Drive System
-###### Sistema de manejo
+## Sistema de manejo
 
 [`StepMotorBracker.stl`](./StepMotorBracket.stl)
 [`BaseMotorBig.stl`](./BaseMotorBig.stl)
@@ -58,15 +51,13 @@ ____
 
 ____
 
-## Camera System
-###### Sistema de cámara
+## Sistema de cámara
 
 [`CamHolderV4.stl`](./CamHolderV4.stl)
 
 ____
 
-## External and Supporting Components
-###### Componentes externos y auxiliares
+## Componentes externos y auxiliares
 
 [`FrontWingV2.stl`](./FrontWingV2.stl)
 [`ButtonHolder.stl`](./ButtonHolder.stl)
