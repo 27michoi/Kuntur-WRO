@@ -3,18 +3,18 @@
 #1. Prepare a separate PlatformIO project
 
 #In the Raspberry Pi terminal through Remote SSH, run:
-export PATH="$HOME/.platformio/penv/bin:$PATH"
+#export PATH="$HOME/.platformio/penv/bin:$PATH"
 
-mkdir -p /home/admin/MyRobot/step6_straight_line_test/src
-mkdir -p /home/admin/MyRobot/step6_straight_line_test/lib
+#mkdir -p /home/admin/MyRobot/step6_straight_line_test/src
+#mkdir -p /home/admin/MyRobot/step6_straight_line_test/lib
 
-cp -R /home/admin/Projects/WRO2026-CLM/code/arduino/lib/FlexyStepper-master \
-/home/admin/MyRobot/step6_straight_line_test/lib/FlexyStepper
+#cp -R /home/admin/Projects/WRO2026-CLM/code/arduino/lib/FlexyStepper-master \
+#/home/admin/MyRobot/step6_straight_line_test/lib/FlexyStepper
 
-cp -R /home/admin/Projects/WRO2026-CLM/code/arduino/lib/Servo-master \
-/home/admin/MyRobot/step6_straight_line_test/lib/Servo
+#cp -R /home/admin/Projects/WRO2026-CLM/code/arduino/lib/Servo-master \
+#/home/admin/MyRobot/step6_straight_line_test/lib/Servo
 
-cd /home/admin/MyRobot/step6_straight_line_test
+#cd /home/admin/MyRobot/step6_straight_line_test
 
 #In VS Code, select:
 #File → Open Folder
@@ -26,11 +26,11 @@ cd /home/admin/MyRobot/step6_straight_line_test
 #/home/admin/MyRobot/step6_straight_line_test/platformio.ini
 
 #Paste:
-[env:uno]
-platform = atmelavr
-board = uno
-framework = arduino
-monitor_speed = 115200
+#[env:uno]
+#platform = atmelavr
+#board = uno
+#framework = arduino
+#monitor_speed = 115200
 
 #3. Create src/main.cpp
 #Create:
@@ -41,21 +41,21 @@ monitor_speed = 115200
 #Disconnect the motor battery before compiling and uploading.
 
 #In the project terminal:
-cd /home/admin/MyRobot/step6_straight_line_test
-pio run
+#cd /home/admin/MyRobot/step6_straight_line_test
+#pio run
 
 #Expected ending:
 #[SUCCESS]
 
 #If pio is not found:
-/home/admin/.platformio/penv/bin/pio run
+#/home/admin/.platformio/penv/bin/pio run
 
 #5. Find the Arduino port
 
 #Run:
-pio device list
-export PATH="$HOME/.platformio/penv/bin:$PATH"
-pio run
+#pio device list
+#export PATH="$HOME/.platformio/penv/bin:$PATH"
+#pio run
 
 #You should find:
 #/dev/ttyACM0
@@ -64,7 +64,7 @@ pio run
 #6. Upload
 
 #Keep the motor battery disconnected while uploading:
-pio run --target upload --upload-port /dev/ttyACM0
+#pio run --target upload --upload-port /dev/ttyACM0
 
 #Expected:
 #[SUCCESS]
@@ -76,32 +76,32 @@ pio run --target upload --upload-port /dev/ttyACM0
 #Keep hands, wires, and loose objects away from the drivetrain.
 
 #Open the serial monitor:
-pio device monitor --port /dev/ttyACM0 --baud 115200
+#pio device monitor --port /dev/ttyACM0 --baud 115200
 
 #Enter:
-STATUS
+#STATUS
 
 #Then:
-A99
+#A99
 
 #Then:
-GO
+#GO
 
 #The program waits five seconds, accelerates, runs, decelerates, stops, and prints:
-DONE
-Driver disabled.
+#DONE
+#Driver disabled.
 
 #Expected duration is approximately 11 seconds.
 
 #If the wheels rotate backward    
 
 #Exit the monitor with:
-Ctrl + ]
+#Ctrl + ]
 
 #Change:
-constexpr int FORWARD_SIGN = -1;
+#constexpr int FORWARD_SIGN = -1;
 #to:
-constexpr int FORWARD_SIGN = 1;
+#constexpr int FORWARD_SIGN = 1;
 
 #Upload again. Do not reverse the motor wires just for this.
 
@@ -129,13 +129,13 @@ constexpr int FORWARD_SIGN = 1;
 #9. Run the 1 m test
 
 #Open the monitor:
-pio device monitor --port /dev/ttyACM0 --baud 115200
+#pio device monitor --port /dev/ttyACM0 --baud 115200
 
 #Enter:
-A99
+#A99
 
 #Then:
-GO
+#GO
 
 #During the five-second delay:
 #Move away from the robot.
@@ -143,7 +143,7 @@ GO
 #Be ready to disconnect motor power if it behaves unexpectedly.
 
 #To request a controlled stop, enter:
-STOP
+#STOP
 
 #That command decelerates the motor. The battery switch remains the emergency stop.
 
@@ -186,34 +186,33 @@ STOP
 #Bent or tight steering linkage
 
 #Once the best value is found, change:
-constexpr int SERVO_CENTER = 99;
+#constexpr int SERVO_CENTER = 99;
 #to the new result and upload again.
 
 #12. Calibrate the travel distance
 #First calculate the average of the three measured distances.
 
 #You can calculate it on the Pi. Replace 930 with your measured average:
-python3 - <<'PY'
-old_steps = 6400
-target_mm = 1000
-actual_mm = 930
+#python3 - <<'PY'
+#old_steps = 6400
+#target_mm = 1000
+#actual_mm = 930
 
-new_steps = round(old_steps * target_mm / actual_mm)
+#new_steps = round(old_steps * target_mm / actual_mm)
 
-print("New TEST_STEPS =", new_steps)
-PY
+#print("New TEST_STEPS =", new_steps)
+#PY
 
 #Then change:
-constexpr long TEST_STEPS = 6400L;
-
+#constexpr long TEST_STEPS = 6400L;
 #to the calculated number, for example:
-constexpr long TEST_STEPS = 6882L;
+#constexpr long TEST_STEPS = 6882L;
 
 #Exit the serial monitor first:
-Ctrl + ]
+#Ctrl + ]
 
 #Then upload:
-pio run --target upload --upload-port /dev/ttyACM0
+#pio run --target upload --upload-port /dev/ttyACM0
 
 #Repeat three floor runs.
 
