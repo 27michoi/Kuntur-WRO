@@ -1,37 +1,40 @@
 ## Step 3
 
-### Overview
+### Resumen
 
-The purpose of this step is to verify that the Arduino Uno can successfully run the project's firmware and is recognized by the Raspberry Pi 5 as a USB serial device.
+El objetivo de este paso es comprobar que el Arduino Uno puede ejecutar correctamente el firmware del proyecto y que la Raspberry Pi 5 lo reconoce como un dispositivo serie USB.
 
-Before testing Arduino communication through the Python program, the Arduino firmware must compile and upload successfully. The Arduino project is maintained separately from the Python package and contains multiple source and header files required for compilation. The firmware uses the `SerialReceiver` class to process incoming commands and initializes serial communication at `115200` baud.
+Antes de probar la comunicación con el Arduino a través del programa de Python, es necesario que el firmware del Arduino se compile y se cargue correctamente. El proyecto de Arduino se gestiona por separado del paquete de Python y contiene varios archivos fuente y de cabecera necesarios para la compilación. El firmware utiliza la clase `SerialReceiver` para procesar los comandos entrantes e inicializa la comunicación serie a `115200` baudios.
 
-After uploading the firmware, the Arduino is connected to the Raspberry Pi through USB. The Raspberry Pi is then checked for the serial device used by the project's Python communication system. The current project configuration expects the Arduino to appear as `/dev/ttyACM0`.
+Tras cargar el firmware, el Arduino se conecta a la Raspberry Pi a través de USB. A continuación, se comprueba en la Raspberry Pi la presencia del dispositivo serie utilizado por el sistema de comunicación en Python del proyecto. La configuración actual del proyecto espera que el Arduino aparezca como `/dev/ttyACM0`.
 
-The procedure consists of:
+El procedimiento consiste en:
 
-1. Locating the Arduino project source and confirming that the complete project structure is available.
-2. Connecting the Arduino Uno to a computer using a USB data cable.
-3. Opening the Arduino project in Arduino IDE.
-4. Selecting the Arduino Uno board and the correct serial port.
-5. Compiling the Arduino project and confirming that no errors occur.
-6. Uploading the firmware to the Arduino and confirming that the upload succeeds.
-7. Connecting the Arduino to the Raspberry Pi 5 through USB.
-8. Checking whether the Raspberry Pi detects the Arduino as a `ttyACM` serial device.
-9. Confirming that `/dev/ttyACM0` is available.
-10. Troubleshooting the USB connection or serial-device assignment if the expected device is not detected.
+1. Localizar el código fuente del proyecto de Arduino y comprobar que la estructura completa del proyecto está disponible.
+2. Conectar el Arduino Uno a un ordenador mediante un cable de datos USB.
+3. Abrir el proyecto de Arduino en el IDE de Arduino.
+4. Seleccionar la placa Arduino Uno y el puerto serie correcto.
+5. Compilar el proyecto de Arduino y confirmar que no se producen errores.
+6. Cargar el firmware en el Arduino y confirmar que la carga se realiza correctamente.
+7. Conectar el Arduino a la Raspberry Pi 5 a través de USB.
+8. Comprobar si la Raspberry Pi detecta el Arduino como un dispositivo serie `ttyACM`.
+9. Confirmar que `/dev/ttyACM0` está disponible.
+10. Solucionar los problemas de conexión USB o de asignación del dispositivo serie si no se detecta el dispositivo esperado.
 
-Goal:
-Confirm that the Arduino firmware compiles and uploads successfully and that the Raspberry Pi can detect the Arduino as the `/dev/ttyACM0` USB serial device required by the project's Python communication system.
+Objetivo:
+Confirmar que el firmware de Arduino se compila y se carga correctamente, y que la Raspberry Pi puede detectar el Arduino como el dispositivo serie USB `/dev/ttyACM0` requerido por el sistema de comunicación en Python del proyecto.
 
 
-Step 3 is complete when:
-* The complete Arduino project structure is available.
-* The Arduino project compiles successfully without errors.
-* The firmware uploads successfully to the Arduino Uno.
-* The Arduino is connected to the Raspberry Pi 5 through a USB data connection.
-* The Raspberry Pi detects the Arduino as a serial device.
-* `/dev/ttyACM0` is available and can be accessed by the system.
-* No repeated USB disconnections or connection errors occur.
+El paso 3 se da por completado cuando:
+* La estructura completa del proyecto de Arduino está disponible.
+* El proyecto de Arduino se compila correctamente sin errores.
+* El firmware se carga correctamente en el Arduino Uno.
+* El Arduino está conectado a la Raspberry Pi 5 a través de una conexión de datos USB.
+* La Raspberry Pi detecta el Arduino como un dispositivo serie.
+* `/dev/ttyACM0` está disponible y el sistema puede acceder a él.
+* No se producen desconexiones USB repetidas ni errores de conexión.
+
 
 ___
+
+
