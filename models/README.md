@@ -249,21 +249,6 @@ Una posición estable de la cámara permite mejorar la repetibilidad del sistema
 3. Colocar soporte de cámara.
 4. Ajustar posición de cámara según las necesidades de calibración.
 
----
-
-# Archivos incluidos
-
-Esta carpeta contiene los modelos digitales y piezas fabricadas mediante impresión 3D:
-
-- Placas del chasis.
-- Soportes del motor.
-- Componentes del sistema Ackermann.
-- Soportes para rodamientos.
-- Soportes electrónicos.
-- Soporte de cámara.
-
-El diseño modular permite realizar modificaciones futuras sin reconstruir completamente el robot.
-
 
 
 
