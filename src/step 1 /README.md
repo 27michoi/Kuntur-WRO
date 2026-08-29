@@ -1,23 +1,24 @@
 ## Step 1
-### Overview
 
-The purpose of this step is to verify that the Raspberry Pi 5 successfully detects and communicates with the Camera Module 3 Wide before proceeding with any project-specific camera or image-processing code.
+### Resumen
 
-This is a hardware and system-level validation step. The camera must first be physically connected correctly and recognized by Raspberry Pi OS before it can be used by the project's Python Picamera2, OpenCV, and image-processing systems.
+El objetivo de este paso es comprobar que la Raspberry Pi 5 detecta correctamente el módulo de cámara «Camera Module 3 Wide» y se comunica con él antes de continuar con cualquier código específico del proyecto relacionado con la cámara o el procesamiento de imágenes.
 
-The procedure consists of:
+Se trata de un paso de validación a nivel de hardware y del sistema. La cámara debe estar primero conectada físicamente de forma correcta y ser reconocida por el sistema operativo Raspberry Pi antes de que pueda ser utilizada por los sistemas Python Picamera2, OpenCV y de procesamiento de imágenes del proyecto.
 
-1. Safely powering off the Raspberry Pi before connecting or reconnecting the camera.
-2. Checking the physical CSI ribbon cable connection.
-3. Booting the Raspberry Pi.
-4. Verifying that the camera is detected using rpicam-hello --list-cameras.
-5. Confirming that the camera can initialize and produce a live preview using rpicam-hello.
+El procedimiento consiste en:
 
-Goal:
-Confirm that the Raspberry Pi 5 can detect and successfully initialize the Camera Module 3 Wide.
+1. Apagar de forma segura la Raspberry Pi antes de conectar o volver a conectar la cámara.
+2. Comprobar la conexión física del cable plano CSI.
+3. Arrancar la Raspberry Pi.
+4. Verificar que la cámara se detecta mediante el comando rpicam-hello --list-cameras.
+5. Confirmar que la cámara puede inicializarse y mostrar una vista previa en directo mediante rpicam-hello.
 
-Step 1 is complete when:
-rpicam-hello --list-cameras detects at least one camera.
-rpicam-hello successfully initializes the camera and displays a live preview.
+Objetivo:
+Confirmar que la Raspberry Pi 5 puede detectar e inicializar correctamente el módulo de cámara 3 Wide.
+
+El paso 1 se da por completado cuando:
+rpicam-hello --list-cameras detecta al menos una cámara.
+rpicam-hello inicializa correctamente la cámara y muestra una vista previa en directo.
 
 ____
