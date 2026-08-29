@@ -1,4 +1,4 @@
-### Fotos del equipo
+## Fotos del equipo
 
 Este directorio contiene dos fotos del equipo (una oficial y otra divertida en la que aparecen todos los miembros del equipo).
 
