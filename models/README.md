@@ -4,6 +4,7 @@ ____
 ## Resumen
 
 Este directorio contiene los archivos STL de los componentes impresos en 3D de nuestro robot para la WRO 2026. Los modelos incluyen las piezas del chasis estructural, del mecanismo de dirección, de los soportes de los motores, del soporte de la cámara y otros componentes mecánicos utilizados en el vehículo.
+También se incluye una descripción del armado del robot junto con indicaciones para el ensamblaje.
 
 ____
 
@@ -65,7 +66,7 @@ ____
 
 ___
 
-# Diseño Mecánico - Robot Autónomo WRO Future Engineers
+# Diseño Mecánico
 
 ## Descripción general
 
