@@ -52,7 +52,7 @@ ___
 
 ___
 
-### Key Takeaways
+### Puntos principales
 
 #### Resultados del radio de giro:
 * **Ángulo 66 (derecha):** Da como resultado un radio de giro de **564,0 mm**.
