@@ -4,7 +4,7 @@
 
 El desarrollo mecánico del robot inició mediante el análisis de diferentes diseños utilizados en competencias anteriores de WRO Future Engineers, sistemas motrices encontrados en vehículos comerciales y soluciones mecánicas disponibles en plataformas como LEGO.
 
-El objetivo inicial fue encontrar una arquitectura que no solo permitiera el funcionamiento del robot, sino que también facilitara:
+El objetivo inicial fue tener una arquitectura que facilitara:
 
 - El montaje y desmontaje durante las pruebas.
 - La modificación rápida de componentes.
